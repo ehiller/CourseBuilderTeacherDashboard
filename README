@@ -1,0 +1,17 @@
+README
+
+Copy teacher_dashboard folder into modules directory of your course builder project.
+
+Add the following line
+
+modules.teacher_dashboard.teacher_dashboard
+
+to you project's app.yaml file. It's location determines where it will appear in the Dashboard's navigation bar. I suggest placing it at the end, before the unsubscribe module. 
+
+To take advantage of the lesson score analytics, you must turn on indexing for the EventEntity. This class lives in the models.py file, which is in the models directory of your course builder project. 
+
+Replace the user_id property in the class to the following line
+
+user_id = db.StringProperty(indexed=True)
+
+so that the lesson score analytics will be able to function properly. 
